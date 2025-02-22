@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Helpome</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Helpome</h1>
+        <nav>
+            <button onclick="showSection('tasks')">Tâches</button>
+            <button onclick="showSection('bills')">Factures</button>
+            <button onclick="showSection('items')">Objets</button>
+            <button onclick="showSection('search')">Rechercher</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="tasks" class="active">
+            <h2>Tâches</h2>
+            <input type="text" id="taskInput" placeholder="Nouvelle tâche">
+            <button onclick="addTask()">Ajouter</button>
+            <ul id="taskList"></ul>
+        </section>
+        
+        <section id="bills">
+            <h2>Factures</h2>
+            <input type="file" id="billUpload" accept=".pdf,.jpg,.png">
+            <ul id="billList"></ul>
+        </section>
+        
+        <section id="items">
+            <h2>Mes Objets</h2>
+            <input type="text" id="itemInput" placeholder="Nom de l'objet">
+            <input type="text" id="locationInput" placeholder="Emplacement">
+            <button onclick="addItem()">Ajouter</button>
+            <ul id="itemList"></ul>
+        </section>
+        
+        <section id="search">
+            <h2>Rechercher</h2>
+            <input type="text" id="searchInput" placeholder="Rechercher dans Helpome">
+            <ul id="searchResults"></ul>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/bills.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
