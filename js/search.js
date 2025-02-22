@@ -2,21 +2,18 @@ document.getElementById('searchInput').addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
     const results = [];
     
-    // Recherche dans les tâches
     tasks.forEach(task => {
         if (task.text.toLowerCase().includes(query)) {
-            results.push(`Tâche: ${task.text}`);
+            results.push(`Tâche: ${task.text} ${task.dueDate ? `(${task.dueDate})` : ''}`);
         }
     });
     
-    // Recherche dans les factures
     bills.forEach(bill => {
-        if (bill.name.toLowerCase().includes(query)) {
-            results.push(`Facture: ${bill.name}`);
+        if (bill.name.toLowerCase().includes(query) || bill.category.toLowerCase().includes(query)) {
+            results.push(`Facture: ${bill.name} (${bill.category})`);
         }
     });
     
-    // Recherche dans les objets
     items.forEach(item => {
         if (item.name.toLowerCase().includes(query) || item.location.toLowerCase().includes(query)) {
             results.push(`Objet: ${item.name} (${item.location})`);
