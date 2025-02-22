@@ -5,18 +5,10 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
-// Gestion du stockage local
-function saveData(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-}
-
-function loadData(key) {
-    return JSON.parse(localStorage.getItem(key)) || [];
-}
-
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
     loadTasks();
     loadBills();
     loadItems();
+    notifyDueTasks(); // Nouvelle fonctionnalité
 });
