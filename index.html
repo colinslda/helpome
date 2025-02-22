@@ -9,20 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Helpome</h1>
-        <nav>
-            <button onclick="showSection('tasks')">Tâches</button>
-            <button onclick="showSection('bills')">Factures</button>
-            <button onclick="showSection('items')">Objets</button>
-            <button onclick="showSection('search')">Rechercher</button>
-        </nav>
-    </header>
-    
     <main>
         <section id="tasks" class="active">
             <h2>Tâches</h2>
             <input type="text" id="taskInput" placeholder="Nouvelle tâche">
+            <input type="date" id="taskDate" placeholder="Date limite">
             <button onclick="addTask()">Ajouter</button>
             <ul id="taskList"></ul>
         </section>
@@ -30,6 +21,8 @@
         <section id="bills">
             <h2>Factures</h2>
             <input type="file" id="billUpload" accept=".pdf,.jpg,.png">
+            <input type="text" id="billCategory" placeholder="Catégorie (ex: Électricité)">
+            <button onclick="addBill()">Ajouter</button>
             <ul id="billList"></ul>
         </section>
         
@@ -37,6 +30,7 @@
             <h2>Mes Objets</h2>
             <input type="text" id="itemInput" placeholder="Nom de l'objet">
             <input type="text" id="locationInput" placeholder="Emplacement">
+            <input type="file" id="itemPhoto" accept="image/*">
             <button onclick="addItem()">Ajouter</button>
             <ul id="itemList"></ul>
         </section>
@@ -48,6 +42,16 @@
         </section>
     </main>
 
+    <footer>
+        <nav>
+            <button onclick="showSection('tasks')"><span>Tâches</span></button>
+            <button onclick="showSection('bills')"><span>Factures</span></button>
+            <button onclick="showSection('items')"><span>Objets</span></button>
+            <button onclick="showSection('search')"><span>Rechercher</span></button>
+        </nav>
+    </footer>
+
+    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
     <script src="js/tasks.js"></script>
     <script src="js/bills.js"></script>
