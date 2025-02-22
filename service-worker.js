@@ -1,4 +1,4 @@
-const CACHE_NAME = 'helpome-cache-v1';
+const CACHE_NAME = 'helpome-cache-v2'; // Mise à jour du cache
 const urlsToCache = [
     '/',
     '/index.html',
@@ -7,7 +7,8 @@ const urlsToCache = [
     '/js/tasks.js',
     '/js/bills.js',
     '/js/items.js',
-    '/js/search.js'
+    '/js/search.js',
+    '/js/utils.js'
 ];
 
 self.addEventListener('install', event => {
